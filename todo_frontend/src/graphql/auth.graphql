@@ -1,0 +1,28 @@
+mutation GoogleAuth($input: GoogleAuthInput!) {
+  googleAuth(input: $input) {
+    user {
+      id
+      email
+      name
+      googleUid
+    }
+    token
+    errors
+  }
+}
+
+query CurrentUser {
+  currentUser {
+    id
+    email
+    name
+    googleUid
+    todos {
+      id
+      title
+      completed
+      createdAt
+      updatedAt
+    }
+  }
+}
